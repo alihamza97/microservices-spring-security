@@ -9,3 +9,12 @@ create coupon first endpoint
 2ND endpoint
 
 http://localhost:8080/couponapi/getCoupon/SUPERSALE
+
+
+
+{
+    "name" :"SAMSUNG",
+    "description":"Great IPHONE",
+    "price":1000,
+    "couponCode":"SUPERSALE"
+}
