@@ -7,5 +7,5 @@ import com.spring.coupon.model.User;
 
 @Repository
 public interface UserRepo extends JpaRepository<User, Long> {
-	User findByEmail(String name);
+	User findByEmail(String email);
 }
