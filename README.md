@@ -18,3 +18,8 @@ http://localhost:8080/couponapi/getCoupon/SUPERSALE
     "price":1000,
     "couponCode":"SUPERSALE"
 }
+
+
+
+postman testing -> username doug@bailey.com 
+password -> doug
