@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.spring.coupon.model.User;
 
 @Repository
-public interface UserRepo extends JpaRepository<UserRepo, Long> {
+public interface UserRepo extends JpaRepository<User, Long> {
 	User findByEmail(String name);
 }
