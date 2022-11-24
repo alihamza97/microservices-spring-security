@@ -38,3 +38,6 @@ scopes:read write
 
 get the generated token and pass into the headers of get request as follows:
 Authorization Bearer {token}
+
+
+incase of database token is stored in the database and resource server looks it up in the database instead of going back to authorization server
