@@ -23,3 +23,17 @@ http://localhost:8080/couponapi/getCoupon/SUPERSALE
 
 postman testing -> username doug@bailey.com 
 password -> doug
+
+
+## OAUTH
+
+first send the request to localhost:8080/oauth/token
+configure the headers as follow
+username : john@ferguson.com
+pasw : 1111
+grant_type: {}
+scopes:read write
+
+
+get the generated token and pass into the headers of get request as follows:
+Authorization Bearer {token}
