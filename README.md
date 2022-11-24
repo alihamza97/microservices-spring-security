@@ -28,7 +28,8 @@ password -> doug
 ## OAUTH
 
 first send the request to localhost:8080/oauth/token
-configure the headers as follow
+configure the headers as follows
+
 username : john@ferguson.com
 pasw : 1111
 grant_type: {}
