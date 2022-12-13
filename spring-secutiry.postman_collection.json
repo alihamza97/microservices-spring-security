@@ -1,0 +1,236 @@
+{
+	"info": {
+		"_postman_id": "fa489963-c452-4860-894b-b16bbe6d03f4",
+		"name": "spring-secutiry",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "add coupon",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"code\":\"BLACKFRIDAY\", \"discount\":10, \"expDate\":\"12/12/2021\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/couponsapi/createCoupon",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"couponsapi",
+						"createCoupon"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCoupon",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOlsiY291cG9uc2VydmljZSJdLCJ1c2VyX25hbWUiOiJkb3VnQGJhaWxleS5jb20iLCJzY29wZSI6WyJyZWFkIiwid3JpdGUiXSwiZXhwIjoxNjcxMDE2MTE1LCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImp0aSI6IjlmOTc2ZmViLTcyMTAtNDE5OS1hYzQyLTNjZTExODZhMmYxOCIsImNsaWVudF9pZCI6ImNvdXBvbiJ9.BeydiYSROhTD5GFqGNbJC0wNOHeNeg-grEHKCUSG8wDWt-TX7HVBaurwpsdTxnPxNOkr9U7gDdBeN7bcxa2gmfg--dDkYCoyh8XbMJKKDGGznx8SkjGru6eG9JPbj4LgolHbGntefDyLryIp0ZqGf3ZQ0FuwSuJjbRq9DJ71T_zY_HWjdPVEtTXflNoER7-C-9gJqoAMjB4F7kuQLFsaZOH7ghu516uaK_UiJgNz7LDv6ottteegHioGBq3xyITa-a9hvUlMESaq7-u0x1T5hzA1igjaOf1Su6tSNN6phh68TKqBAuuVWtQI8YNDT2vujijOOgDCZXYeU88nLem8-A",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/couponapi/getCoupon/SUPERSALE",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"couponapi",
+						"getCoupon",
+						"SUPERSALE"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createProduct",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "OAuthTesting",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "john@ferguson.com",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "doug",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/oauth/token",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OAuthTesting Copy",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "coupon",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1111",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "doug@bailey.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "doug",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "scopes",
+							"value": "read write",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:9092/oauth/token",
+					"host": [
+						"localhost"
+					],
+					"port": "9092",
+					"path": [
+						"oauth",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "OAuthTestingDynamicPublicKey",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "coupon",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "1111",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "doug@bailey.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "doug",
+							"type": "text"
+						},
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "scopes",
+							"value": "read write",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:9092/oauth/token_key",
+					"host": [
+						"localhost"
+					],
+					"port": "9092",
+					"path": [
+						"oauth",
+						"token_key"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
