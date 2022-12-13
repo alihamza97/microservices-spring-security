@@ -1,4 +1,4 @@
-package com.spring.authserver;
+package com.spring.authserver.config;
 
 import java.security.KeyPair;
 
@@ -42,6 +42,8 @@ public class AuthorizationServerConfig implements AuthorizationServerConfigurer 
 	@Autowired
 	private DataSource dataSource;
 
+//	these fields are used for assymetric public to get the data from jks file
+
 //	@Value("${keyFile}")
 //	private String keyfile;
 //	@Value("${password}")
@@ -62,18 +64,20 @@ public class AuthorizationServerConfig implements AuthorizationServerConfigurer 
 //		endpoints.tokenStore(new JdbcTokenStore(dataSource)).authenticationManager(authenticationManger)
 //				.userDetailsService(userDetailsService);
 //	}
-//	
-	@Override
-	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
-		endpoints.tokenStore(tokenStore()).accessTokenConverter(jwtAccessTokenConverter()).authenticationManager(authenticationManger)
-				.userDetailsService(userDetailsService);
-	}
+
 	// InMemory token store
 //	@Override
 //	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
 //		endpoints.tokenStore(new InMemoryTokenStore()).authenticationManager(authenticationManger)
 //				.userDetailsService(userDetailsService);
 //	}
+
+//	JWT token store
+	@Override
+	public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+		endpoints.tokenStore(tokenStore()).accessTokenConverter(jwtAccessTokenConverter())
+				.authenticationManager(authenticationManger).userDetailsService(userDetailsService);
+	}
 
 	@Override
 	public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
@@ -85,10 +89,13 @@ public class AuthorizationServerConfig implements AuthorizationServerConfigurer 
 		return new JwtTokenStore(jwtAccessTokenConverter());
 	}
 
-	/// jwt part
+	/// JWT
 	@Bean
 	public JwtAccessTokenConverter jwtAccessTokenConverter() {
 		JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();
+
+//		This code is used with assymetric public key
+
 //		KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource(keyfile),
 //				password.toCharArray());
 //		KeyPair keyPair = keyStoreKeyFactory.getKeyPair(alias);

@@ -1,4 +1,4 @@
-package com.spring.authserver;
+package com.spring.authserver.model;
 
 
 import java.util.Set;

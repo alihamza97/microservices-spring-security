@@ -1,4 +1,4 @@
-package com.spring.authserver;
+package com.spring.authserver.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +14,6 @@ public class OAuth2SecurityConfigurer extends WebSecurityConfigurerAdapter {
 	@Override
 	@Bean
 	protected AuthenticationManager authenticationManager() throws Exception {
-		// TODO Auto-generated method stub
 		return super.authenticationManager();
 	}
 

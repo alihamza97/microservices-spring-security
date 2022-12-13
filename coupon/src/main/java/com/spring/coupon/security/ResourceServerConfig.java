@@ -21,6 +21,7 @@ import org.springframework.security.oauth2.provider.token.store.KeyStoreKeyFacto
 public class ResourceServerConfig implements ResourceServerConfigurer {
 
 	public static final String RESOURCE_ID = "couponservice";
+//	Assymetric key reference
 //	@Value("${publicKey}")
 //	private String publicKey;
 
@@ -35,7 +36,7 @@ public class ResourceServerConfig implements ResourceServerConfigurer {
 		http.authorizeRequests().mvcMatchers(HttpMethod.GET, "/couponapi/getCoupon").hasAnyRole("USER", "ADMIN")
 				.mvcMatchers(HttpMethod.POST, "/couponapi/createCoupon").hasAnyRole("ADMIN").and().csrf().disable();
 	}
-	
+
 	@Bean
 	public TokenStore tokenStore() {
 		return new JwtTokenStore(jwtAccessTokenConverter());
@@ -45,6 +46,7 @@ public class ResourceServerConfig implements ResourceServerConfigurer {
 	@Bean
 	public JwtAccessTokenConverter jwtAccessTokenConverter() {
 		JwtAccessTokenConverter jwtAccessTokenConverter = new JwtAccessTokenConverter();
+//		This code is used for assymetric  key 
 //		KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource(keyfile),
 //				password.toCharArray());
 //		KeyPair keyPair = keyStoreKeyFactory.getKeyPair(alias);

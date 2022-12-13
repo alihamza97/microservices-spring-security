@@ -1,8 +1,8 @@
-package com.spring.authserver;
+package com.spring.authserver.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
+import com.spring.authserver.model.User;
 
 @Repository
 public interface UserRepo extends JpaRepository<User, Long> {

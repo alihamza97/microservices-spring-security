@@ -1,10 +1,13 @@
-package com.spring.authserver;
+package com.spring.authserver.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+
+import com.spring.authserver.model.User;
+import com.spring.authserver.repository.UserRepo;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
