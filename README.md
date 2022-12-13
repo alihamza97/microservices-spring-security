@@ -1,6 +1,6 @@
 # microservices-spring-security"  (in progress)
 
-create coupon first endpoint 
+create coupon  endpoint 
 
 {"code":"SUPERSALE",
 "discount":10,
